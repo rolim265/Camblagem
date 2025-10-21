@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Navbar Ajustada</title>
+	<!-- Bootstrap 4 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+	<!-- Popper.js -->
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+		body {
+			font-family: 'Roboto', sans-serif;
+			background-color: #2A3B54;
+			color: #fff;
+		}
+
+		/* Navbar */
+		.navbar-mainbg {
+			background-color: #ffffff;
+			padding: 0px;
+			position: relative;
+		}
+
+		.navbar-logo {
+			padding: 15px;
+			color: #fff;
+			font-weight: bold;
+			margin-left: 1%;
+		}
+
+		#navbarSupportedContent ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+		}
+
+		#navbarSupportedContent ul li {
+			position: relative;
+		}
+
+		/* Links normais */
+		#navbarSupportedContent ul li a {
+			display: block;
+			padding: 15px 20px;
+			color: #2A3B54;
+			text-decoration: none;
+			transition: 0.3s;
+			border-radius: 5px;
+		}
+
+		/* Link ativo ou hover (somente links normais, não dropdown) */
+		#navbarSupportedContent ul li:not(.dropdown) a:hover,
+		#navbarSupportedContent ul li:not(.dropdown).active a {
+			background-color: #DA6E19;
+			color: #2A3B54;
+		}
+
+		/* Dropdown links principais */
+		.nav-item.dropdown>.nav-link {
+			background-color: transparent;
+			color: #2A3B54;
+		}
+
+		.nav-item.dropdown>.nav-link:hover,
+		.nav-item.dropdown>.nav-link:focus {
+			background-color: #DA6E19;
+			/* só o link principal fica laranja */
+			color: #2A3B54;
+		}
+
+		/* Dropdown menu */
+		.dropdown-menu {
+			background-color: #ffffff;
+			/* mesma cor da navbar ou ajusta se quiser */
+			border: none;
+			margin-top: 0;
+			border-radius: 5px;
+			padding: 0;
+		}
+
+		.dropdown-item {
+			color: #2A3B54;
+			padding: 10px 20px;
+			transition: 0.3s;
+		}
+
+		.dropdown-item:hover {
+			background-color: #DA6E19;
+			color: #2A3B54;
+		}
+
+		/* Hori Selector */
+		.hori-selector {
+			position: absolute;
+			height: 100%;
+			width: 0;
+			top: 0;
+			left: 0;
+			background-color: #DA6E19;
+			border-radius: 5px;
+			transition: all 0.4s ease;
+			z-index: -1;
+		}
+
+		/* Responsive */
+		@media(max-width: 991px) {
+			#navbarSupportedContent ul {
+				flex-direction: column;
+			}
+
+			#navbarSupportedContent ul li a {
+				padding: 12px 30px;
+			}
+
+			.dropdown-menu {
+				position: relative;
+				/* ajusta dropdown no mobile */
+			}
+
+			@media (max-width: 991px) {
+				.navbar-toggler i {
+					color: #000;
+				}
+			}
+
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-mainbg">
+		<a class="navbar-brand navbar-logo" href="#"> <img src="../img/logoname.png" alt="CABLAGEM"
+				style="height:70px;"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+			<i class="fas fa-bars text-dark"></i>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<div class="hori-selector"></div>
+				<li class="nav-item active"><a class="nav-link" href="#">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link" href="#sobre">Quem somos?</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown">
+						Serviços
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Elétrica</a>
+						<a class="dropdown-item" href="#">Automação</a>
+						<a class="dropdown-item" href="#">Telemática</a>
+						<a class="dropdown-item" href="#">CFTZ</a>
+						<a class="dropdown-item" href="#">Detecção de Incêndio</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown">
+						Portifólio
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Elétrica</a>
+						<a class="dropdown-item" href="#">Automação</a>
+						<a class="dropdown-item" href="#">Telemática</a>
+						<a class="dropdown-item" href="#">Segurança Eletrônica</a>
+						<a class="dropdown-item" href="#">Detecção de Incêndio</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown">
+						Contato
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">E-mail</a>
+						<a class="dropdown-item" href="https://wa.me/5511944591328?text=Oi%20Bruno%2C%20tudo%20bem%3F%20Estava%20vendo%20seu%20Instagram%20e%20seu%20site%2C%20e%20tenho%20interesse%20em%20seu%20servi%C3%A7o.%20Poderia%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F">WhatsApp</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Scripts Bootstrap e jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<script>
+		// Movimento do Hori Selector
+		function moveSelector() {
+			var $active = $('#navbarSupportedContent ul li.active');
+			var left = $active.position().left;
+			var width = $active.outerWidth();
+			$('.hori-selector').css({ left: left + 'px', width: width + 'px' });
+		}
+
+		$(document).ready(function () {
+			moveSelector();
+			$('#navbarSupportedContent ul li').click(function () {
+				$('#navbarSupportedContent ul li').removeClass('active');
+				$(this).addClass('active');
+				moveSelector();
+			});
+		});
+
+		$(window).resize(function () {
+			moveSelector();
+		});
+	</script>
+
+</body>
+
+</html>
